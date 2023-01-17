@@ -1,0 +1,30 @@
+<ng-container *ngIf="pokemonResponse">
+	<div class="row">
+		<div class="col-6">
+			<ngb-pagination [maxSize]="5" [pageSize]="10" [collectionSize]="pokemonResponse.count "
+				[page]="(currentPage$ | async)??1" (pageChange)="currentPage$.next($event)"></ngb-pagination>
+
+		</div>
+		<div class="col-6">
+			<input type="text">
+		</div>
+
+	</div>
+
+	<table class="table table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let pokemon of pokemonResponse.results;index as i">
+				<td>
+					{{i+1}}
+				</td>
+				<td>{{ pokemon.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</ng-container>
