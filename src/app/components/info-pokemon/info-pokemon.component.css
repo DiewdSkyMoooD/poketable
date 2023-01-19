@@ -1,34 +1,44 @@
-.pokemon{
+.pokemon {
     border: 2px solid gray;
     border-radius: 20px;
-   
+    min-height: 500px;
 }
-.name{
+
+.name {
     color: white;
 }
-.all-info{
+
+.all-info {
     background-color: white;
     border-radius: 0 0 20px 20px;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-align: center;
     margin: 10px 0 0 0;
 }
 
-.height{
+.height {
     margin: 0;
-   
+
 }
-.weight{
+
+.weight {
     margin: 0;
 }
 
-.pokemon-img{
+.pokemon-img {
     margin: 0 auto;
     display: block;
     width: 50%;
 }
-.type{
+
+.type {
     border: solid 1px white;
     border-radius: 5px;
     padding: 2px;
@@ -38,138 +48,176 @@ h1,h2,h3,h4,h5,h6{
     text-align: center;
 }
 
-.stats{
+.stats {
     margin: 0 5px;
 }
 
-.stats p{
-   margin: 0 0 6px 0 ;
+.stats p {
+    margin: 0 0 6px 0;
 }
 
-.progressbar{
+.progressbar {
     width: 60%;
-    
+
 }
 
-.normal{
+.normal {
     background: radial-gradient(circle, #A4ACAF, black);
 }
-.fighting{
+
+.fighting {
     background: radial-gradient(circle, #D56723, black);
 }
-.flying{
+
+.flying {
     background: radial-gradient(circle, #337BEF, black);
 }
-.poison{
+
+.poison {
     background: radial-gradient(circle, #B97FC9, black);
 }
-.ground{
+
+.ground {
     background: radial-gradient(circle, #AB9842, black);
 }
-.rock{
+
+.rock {
     background: radial-gradient(circle, #8A761C, black);
 }
-.bug{
+
+.bug {
     background: radial-gradient(circle, #729F3F, black);
 }
-.ghost{
+
+.ghost {
     background: radial-gradient(circle, #7B62A3, black);
 }
-.steel{
+
+.steel {
     background: radial-gradient(circle, #9EB7B8, black);
 }
-.fire{
-    background: radial-gradient(circle,  #FD7D24, black);
+
+.fire {
+    background: radial-gradient(circle, #FD7D24, black);
 }
-.water{
-    background: radial-gradient(circle,  #4592C4, black);
+
+.water {
+    background: radial-gradient(circle, #4592C4, black);
 }
-.grass{
-    background: radial-gradient(circle,  #9BCC50, black);
+
+.grass {
+    background: radial-gradient(circle, #9BCC50, black);
 }
-.electric{
-    background: radial-gradient(circle,  #EED535, black);
+
+.electric {
+    background: radial-gradient(circle, #EED535, black);
 }
-.psychic{
-    background: radial-gradient(circle,  #F366B9, black);
+
+.psychic {
+    background: radial-gradient(circle, #F366B9, black);
 }
-.ice{
-    background: radial-gradient(circle,  #51C4E7, black);
+
+.ice {
+    background: radial-gradient(circle, #51C4E7, black);
 }
-.dragon{
-    background: radial-gradient(circle,  #F16E57, black);
+
+.dragon {
+    background: radial-gradient(circle, #F16E57, black);
 }
-.dark{
-    background: radial-gradient(circle,  #707070, black);
+
+.dark {
+    background: radial-gradient(circle, #707070, black);
 }
-.fairy{
-    background: radial-gradient(circle,  #FDB9E9, black);
+
+.fairy {
+    background: radial-gradient(circle, #FDB9E9, black);
 }
-.unknown{
-    background: radial-gradient(circle,  #ffffff, black);
+
+.unknown {
+    background: radial-gradient(circle, #ffffff, black);
 }
-.shadow{
-    background: radial-gradient(circle,  #8f9496, black);
+
+.shadow {
+    background: radial-gradient(circle, #8f9496, black);
 }
 
 
-.normal-item{
-    background:  #A4ACAF;
+.normal-item {
+    background: #A4ACAF;
 }
-.fighting-item{
-    background: #D56723 ;
+
+.fighting-item {
+    background: #D56723;
 }
-.flying-item{
+
+.flying-item {
     background: #337BEF;
 }
-.poison-item{
+
+.poison-item {
     background: #B97FC9;
 }
-.ground-item{
+
+.ground-item {
     background: #AB9842;
 }
-.rock-item{
+
+.rock-item {
     background: #8A761C;
 }
-.bug-item{
+
+.bug-item {
     background: #729F3F;
 }
-.ghost-item{
+
+.ghost-item {
     background: #7B62A3;
 }
-.steel-item{
+
+.steel-item {
     background: #9EB7B8;
 }
-.fire-item{
-    background:  #FD7D24;
+
+.fire-item {
+    background: #FD7D24;
 }
-.water-item{
-    background:  #4592C4;
+
+.water-item {
+    background: #4592C4;
 }
-.grass-item{
-    background:  #9BCC50;
+
+.grass-item {
+    background: #9BCC50;
 }
-.electric-item{
-    background:  #EED535;
+
+.electric-item {
+    background: #EED535;
 }
-.psychic-item{
-    background:  #F366B9;
+
+.psychic-item {
+    background: #F366B9;
 }
-.ice-item{
-    background:  #51C4E7;
+
+.ice-item {
+    background: #51C4E7;
 }
-.dragon-item{
+
+.dragon-item {
     background: #F16E57;
 }
-.dark-item{
+
+.dark-item {
     background: #707070;
 }
-.fairy-item{
+
+.fairy-item {
     background: #FDB9E9;
 }
-.unknown-item{
+
+.unknown-item {
     background: #ffffff;
 }
-.shadow-item{
+
+.shadow-item {
     background: #8f9496;
 }

@@ -1,0 +1,7 @@
+<!--Section show the pokemons stark wit a letter-->
+<h3 *ngIf="pokemons" class="mb-3 mt-5">Pokemons by letter</h3>
+<div *ngIf="pokemons" class="alphabet">
+    <div class="" *ngFor="let letter of alphabet">
+        <span class="letter"> {{letter.letter}} : {{letter.count}} </span>
+    </div>
+</div>

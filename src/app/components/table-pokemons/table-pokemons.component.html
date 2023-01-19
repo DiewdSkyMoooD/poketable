@@ -1,29 +1,39 @@
-<ng-container *ngIf="pokemonResponse">
+<app-alert-api *ngIf="error"></app-alert-api>
+<!--get pokemons from the api -->
+<ng-container *ngIf="pokemonResponse && pokemons$ |async as pokemons">
 	<div class="row">
-		<div class="col-6">
-			<ngb-pagination [maxSize]="5" [pageSize]="10" [collectionSize]="pokemonResponse.count "
-				[page]="(currentPage$ | async)??1" (pageChange)="currentPage$.next($event)"></ngb-pagination>
-
+		<!--input and autocomplete with boostrap-->
+		<div class="search col-lg-6 col-sm-12">
+			<input [ngModel]="filter |async" (ngModelChange)="filter.next($event)" class="form-control"
+				placeholder="Search pokemon" type="text" list="pokemonsList">
+			<datalist id="pokemonsList">
+				<option *ngFor="let option of pokemons" [value]="option.name"></option>
+			</datalist>
 		</div>
-		<div class="col-6">
-			<input type="text">
+		<!--pagination using ngbootstrap-->
+		<div class="pagination col-lg-6 col-sm-12">
+			<ngb-pagination [maxSize]="5" [pageSize]="pageSize" [collectionSize]="pokemons.length" [(page)]="page"
+				[ellipses]="false"></ngb-pagination>
 		</div>
-
 	</div>
-
+	<!--Table of pokemons-->
 	<table class="table table table-striped">
 		<thead>
 			<tr>
 				<th scope="col">#</th>
 				<th scope="col">Name</th>
+				<th scope="col">Options</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let pokemon of pokemonResponse.results;index as i">
+			<tr
+				*ngFor="let pokemon of pokemons | slice: (page - 1) * pageSize:(page - 1) * pageSize + pageSize;index as i">
 				<td>
 					{{i+1}}
 				</td>
 				<td>{{ pokemon.name}}</td>
+				<td><fa-icon class="pointer" [icon]="faEye" ngbTooltip="Watch {{pokemon.name}}"
+						(click)="loadPokemon(pokemon.name)"></fa-icon></td>
 			</tr>
 		</tbody>
 	</table>

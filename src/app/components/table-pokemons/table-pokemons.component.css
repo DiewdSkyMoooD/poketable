@@ -1,0 +1,15 @@
+.pointer {
+    cursor: pointer;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 992px) {
+    
+    .search{
+        margin-bottom:15px;
+    }
+  }

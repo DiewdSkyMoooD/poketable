@@ -1,28 +1,31 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, forkJoin, map, of, switchMap } from 'rxjs';
+import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { BasicPokemon, IResponseBasePokemons } from '../models/pokemon';
+import { BasicPokemon, ICompletePokemon, IResponseBasePokemons } from '../models/pokemon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PokemonService {
-base_url :string = environment.base_url;
-itemsPerPage: number = 10;
+  //url of enviroments
+  base_url: string = environment.base_url;
+  //subject to show the pokemon
+  currentPokemon = new Subject<string>();
+  //output to get the data of diferents components
+  @Output() pokemonsResults$: EventEmitter<BasicPokemon[]> = new EventEmitter();
 
-  constructor(private http:HttpClient) {
-  }
-  
+  constructor(private http: HttpClient) { }
+
   //Get info of pokemons. 
-  getPokemons(page:number){
-    return this.http.get<IResponseBasePokemons>(`${this.base_url}`,{
-      params: { offset: (page * this.itemsPerPage) - this.itemsPerPage, limit:this.itemsPerPage}
-    })
+  getPokemons(): Observable<IResponseBasePokemons> {
+    return this.http.get<IResponseBasePokemons>(`${this.base_url}`, {
+      params: { offset: 0, limit: 10000 }
+    });
   }
 
   //Get one pokemon by id or name.
-  getPokemon(nameOrId:string | number){
-    return this.http.get(`${this.base_url}/${nameOrId}`)
+  getPokemon(name: string): Observable<ICompletePokemon> {
+    return this.http.get<ICompletePokemon>(`${this.base_url}/${name}`);
   }
 }
